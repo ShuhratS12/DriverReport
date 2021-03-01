@@ -1,0 +1,7 @@
+{
+  "name": "logistic-monitoring",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

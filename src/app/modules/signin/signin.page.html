@@ -1,0 +1,31 @@
+<ion-content class="bg_color" fullscreen>
+  <div class="banner">
+    <img src="assets/imgs/sign_in_bg.png" class="banner_bg">
+    <div class="logo">
+      <img src="assets/imgs/logo_2.png">
+      <h2>Logistic Monitoring</h2>
+    </div>
+  </div>
+
+  <div class="form">
+    <ion-list lines="none">
+      <ion-item lines="none">
+        <ion-label mode="md" position="floating">Email Address</ion-label>
+        <ion-input mode="md" type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label mode="md" position="floating">Password</ion-label>
+        <ion-input mode="md" type="password" [(ngModel)]="password"></ion-input>
+        <h5 slot="end" (click)="forgotpassword()">Forgot ?</h5>
+      </ion-item>
+    </ion-list>
+    <ion-button size="large" shape="block" class="btn" (click)="logIn()">Sign in</ion-button>
+  </div>
+
+
+  <div class="social_login">
+    <ion-button size="large" shape="block" class="btn new_user" (click)="signup()">New User?
+    </ion-button>
+  </div>
+</ion-content>

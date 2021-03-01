@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="title_inner d-flex">
+				<div class="location">
+					<h2>Logistic Monitoring </h2>
+					<img src="assets/imgs/logo_2.png" width="28" height="28	">
+				</div>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+	<div class="banner">
+		<h3>Vehicle Selector</h3>
+		<div class="search_box d-flex">
+			<ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+			<ion-searchbar class="ion-no-padding" searchIcon="hide" mode="ios" placeholder="" (ionChange)="filter($event)">
+			</ion-searchbar>
+		</div>
+	</div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+	<ion-list lines="none" *ngIf="vehicleList && vehicleList.length > 0">
+		<ion-radio-group [(ngModel)]="selectedVehicle">
+			<ion-item *ngFor="let vehicle of vehicleList$ | async" (click)="onVehicleClick(vehicle)">
+				<div class="item_inner d-flex">
+					<h3>{{vehicle.name}}</h3>
+					<ion-radio class="end" value="{{'' + vehicle.id}}"></ion-radio>
+				</div>
+			</ion-item>
+		</ion-radio-group>
+	</ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-button [disabled]="selectedVehicle === null" size="large" shape="full" class="btn" (click)="selectVehicle()">
+		Select
+	</ion-button>
+</ion-footer>
