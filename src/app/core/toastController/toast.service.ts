@@ -3,7 +3,6 @@ import { ToastController } from '@ionic/angular';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
-
   constructor(private toastCtrl: ToastController) { }
 
   async showToast(color: string, message: string) {
